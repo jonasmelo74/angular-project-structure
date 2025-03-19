@@ -1,1 +1,3 @@
-<p>input works!</p>
+<input value="value" [ngClass]="[type, size]" [placeholder]="placeholder" [disabled]="disabled" [(ngModel)]="value"
+  (input)="onInputChange($event)" [value]="value" [mask]="type === 'currency' ? 'separator.2' : ''"
+  [prefix]="type === 'currency' ? 'R$ ' : ''" thousandSeparator="." decimalMarker="," [dropSpecialCharacters]="false" />
