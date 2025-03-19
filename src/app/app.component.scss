@@ -1,0 +1,60 @@
+$responsive-breakpoint: 768px;
+$aside-width: 250px;
+$aside-background: #f4f4f4;
+$aside-padding: 20px;
+
+body {
+  display: flex;
+}
+
+.aside-toggle {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+app-aside {
+  width: $aside-width;
+  background-color: $aside-background;
+  padding: $aside-padding;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+app-navbar {
+  margin-left: $aside-width;
+  flex: 1;
+}
+
+@media (max-width: $responsive-breakpoint) {
+  .aside-toggle {
+    display: block;
+  }
+
+  app-aside {
+    width: 100%;
+    transform: translateX(-100%);
+    position: absolute;
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  app-navbar {
+    margin-left: 0;
+  }
+}

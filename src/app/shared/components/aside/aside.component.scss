@@ -1,0 +1,42 @@
+$responsive-breakpoint: 768px;
+$aside-width: 250px;
+$aside-background: #f4f4f4;
+$aside-padding: 20px;
+
+.responsive-aside {
+  width: $aside-width;
+  background-color: $aside-background;
+  padding: $aside-padding;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 10px 0;
+
+      a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 10px;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $responsive-breakpoint) {
+  .responsive-aside {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
